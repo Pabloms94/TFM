@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera newcamera;
     public float speed = 60f;            // The speed that the player will move at.
 
-    public GameObject hole;            //The position of the hole
+    //public GameObject hole;            //The position of the hole
 
     Vector3 movement;                   // The vector to store the direction of the player's movement.
    // Animator anim;                      // Reference to the animator component.
@@ -65,15 +65,15 @@ public class PlayerMovement : MonoBehaviour
         GameObject aguj = GameObject.FindGameObjectWithTag("Hole");
         Scene scene = SceneManager.GetActiveScene();
 
-        if ((playerRigidbody.transform.position.z > aguj.transform.position.z - (aguj.GetComponent<Collider>().bounds.size.z / 2)) && (playerRigidbody.transform.position.z < aguj.transform.position.z + (aguj.GetComponent<Collider>().bounds.size.z / 2)))
-        {
-            Debug.Log("DENTRO");
-            //Deberíamos esperar cierto tiempo para que el jugador vea la caída del personaje en el agujero, y después reiniciar.
-            //    SceneManager.LoadScene(scene.name);
-        }
+        //if ((playerRigidbody.transform.position.z > aguj.transform.position.z - (aguj.GetComponent<Collider>().bounds.size.z / 2)) && (playerRigidbody.transform.position.z < aguj.transform.position.z + (aguj.GetComponent<Collider>().bounds.size.z / 2)))
+        //{
+        //    Debug.Log("DENTRO");
+        //    //Deberíamos esperar cierto tiempo para que el jugador vea la caída del personaje en el agujero, y después reiniciar.
+        //    //    SceneManager.LoadScene(scene.name);
+        //}
         
 
-        if (playerRigidbody.transform.position.y < -0.5f)
+        if (playerRigidbody.transform.position.y < -1.81f)
             playerRigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
