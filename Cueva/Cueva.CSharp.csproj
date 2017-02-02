@@ -156,6 +156,7 @@
     <Compile Include="Assets\Scripts\CompleteCameraController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\ScriptRock.cs" />
+    <Compile Include="Assets\Scripts\SpringCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
