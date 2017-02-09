@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ScriptRock : MonoBehaviour {
     private Rigidbody rockRigidbody;
-    public GameObject brigde;
-	// Use this for initialization
-	void Start () {
+    public GameObject bridge;
+    private NavMeshObstacle obstacle;
+    // Use this for initialization
+    void Start () {
         rockRigidbody = GetComponent<Rigidbody>();
+        obstacle = bridge.GetComponent<NavMeshObstacle>();
+     
         //brigde = GameObject.FindGameObjectWithTag("Bridge");
     }
 	
@@ -16,8 +20,9 @@ public class ScriptRock : MonoBehaviour {
         if (transform.position.y < -0.9)
         {
             rockRigidbody.constraints = RigidbodyConstraints.FreezeAll;
-            brigde.SetActive(true);
-            Debug.Log(brigde.activeSelf);
+            bridge.SetActive(true);
+            obstacle.enabled = false;
+            //Debug.Log(brigde.activeSelf);
         }
 	}
 }
